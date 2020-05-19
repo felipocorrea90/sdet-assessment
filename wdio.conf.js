@@ -161,7 +161,7 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         tags: [],
-        timeout: 50000,
+        timeout: 500000,
         ignoreUndefinedDefinitions: false,
     },
 

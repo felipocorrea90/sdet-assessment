@@ -6,6 +6,7 @@ class Search {
     get addedToCartMessage() { return $('//h2[contains(.,"Product successfully added to your shopping cart")]') }
     get addCartPopUp() { return $('//button[@name="Submit"]') }
     get popUp() { return $('//iframe[@class="fancybox-iframe"]') }
+    get quickViewButton() { return $('//a[@class="quick-view"]') }
 
     // Methods
     isMyAccountContainerDisplayed() {
@@ -13,7 +14,8 @@ class Search {
     }
 
     addItem() {
-        this.firstSearchItem.click()
+        this.firstSearchItem.moveTo()
+        this.quickViewButton.click()
         browser.switchToFrame(this.popUp)
         this.addCartPopUp.click()
     }

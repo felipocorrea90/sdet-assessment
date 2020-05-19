@@ -56,7 +56,7 @@ exports.config = {
         //
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ["--headless", "--no-sandbox", "--whitelisted-ips", "--disable-extensions", "--disable-dev-shm-usage"]
+            args: ["--headless", "--no-sandbox", "--whitelisted-ips", "--disable-extensions", "--disable-dev-shm-usage", "--window-size=2560,1440"]
         }
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -164,7 +164,7 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         tags: [],
-        timeout: 50000,
+        timeout: 500000,
         ignoreUndefinedDefinitions: false,
     },
 

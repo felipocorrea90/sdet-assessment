@@ -1,5 +1,5 @@
 # PAGER SDET Assessment
-I choose one of the classic automation testing sites http://automationpractice.com/index.php for this assessment. Is a clothing
+I choose one of the classic automation testing sites http://automationpractice.com/index.php for this assessment. It is a clothing
 online shopping site with plenty of features and options to automate.
 
 The project has the following test automation features:
@@ -92,3 +92,17 @@ It is odd since the domain is the same and the test is not navigating outside th
 
 ## Additional Notes
 The .tmp folder was added consciously to have one rich HTML report with all scenarios executed successfully.  
+
+## CI
+[![buddy pipeline](https://app.buddy.works/felipocorrea90/pager-sdet-assessment/pipelines/pipeline/257282/badge.svg?token=541e8bdee243fe3c7d2c38c49613537ebfb221969f5f52dd8363540301de15a6 "buddy pipeline")](https://app.buddy.works/felipocorrea90/pager-sdet-assessment/pipelines/pipeline/257282)
+
+Buddy (https://buddy.works) is currently being used as the CI platform set-up to trigger the test pipeline manually, which consists of the following actions:
+
+1. Run the wdio headless runner using the pre-configured `Dockerfile`.
+2. Save HTML Report and static assets to .zip file located at `.tmp/report.zip`.
+3. Send an email with the .zip file mentioned in step 2 as an attachment. Currently being sent to a disposable email address at bmoubefr@sharklasers.com.
+
+Please note that the `.tmp/report.zip` is specific to each pipeline run and is not persistent as is mounted on the container queued for the test.
+
+## Docker Compose
+Running the `docker-compose up` command will run the wdio-pager application using the wdio headless runner executing all four feature files.
