@@ -2,7 +2,7 @@ Feature: Create Account
 
   Scenario: Create a new user account
     Given user visits the shopping sign in website
-    When the user clicks the Create an Account CTA with email "thisisatest_27@testco123.com" specified
+    When the user clicks the Create an Account CTA with email "thisisatest_30@testco123.com" specified
     And adds all the mandatory personal information
       | Gender      | Male        |
       | First Name  | Felipe      |
