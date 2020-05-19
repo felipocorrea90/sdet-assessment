@@ -88,15 +88,18 @@ A few considerations were added to avoid flaky tests:
 **Installation**
 
 
-1. Run npm install In case some node_modules are not downloaded properly make sure to install them separately with the command `npm install <module> --save-dev`. I had to install @wdio/cli this way `npm i --save-dev @wdio/cli`
+1. Run npm install In case some node_modules are not downloaded properly make sure to install them separately with the command `npm install <module> --save-dev`. I had to install @wdio/cli this way `npm i --save-dev @wdio/cli`.
 2. Make sure that the feature files have the values you want. Feature files are located in the features folder.
-3. Run all tests by using the command `npx wdio wdio.conf.js`
+3. Run all tests by using the command `npx wdio wdio.conf.js`.
+
+Locally I experience no additional issues after following the previous installation steps, however, when running Docker installing `libnss3` was necessary by using the command
+`apt-get update && apt-get install -y libnss3`. If you find any issues related to this library missing make sure to add it by using the mentioned command.
 
 ## Why not Cypress
 I started this project using Cypress however I quickly realized that Cypress was always giving me problems related to a "cross-origin error on page load"
 when a CSS property changed after clicking an element. I tried adding the chromeWebSecurity to false to the `cypress.json` file as suggested by the stack trace but instead of continuing the test or showing an error, a blank page is loaded blocking the test entirely.
 
-It is odd since the domain is the same and the test is not navigating outside the application. I reported this issue to Cypress here https://github.com/cypress-io/cypress/issues/7402
+It is odd since the domain is the same and the test is not navigating outside the application. I reported this issue to Cypress here https://github.com/cypress-io/cypress/issues/7402.
 
 ## Additional Notes
 The .tmp folder was added consciously to have one rich HTML report with all scenarios executed successfully. 
