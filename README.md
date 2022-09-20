@@ -1,4 +1,4 @@
-# PAGER SDET Assessment
+# SDET Assessment
 I choose one of the classic automation testing sites http://automationpractice.com/index.php for this assessment. It is a clothing
 online shopping site with plenty of features and options to automate.
 
